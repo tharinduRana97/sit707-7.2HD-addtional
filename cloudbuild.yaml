@@ -6,8 +6,9 @@ steps:
 
   - id: 'Run Tests'
     name: 'python'
-    entrypoint: 'python'
-    args: ['test_app.py']
+    entrypoint: 'pytest'
+    args: ['app/tests']
+
 
   - id: 'Dockerize'
     name: 'gcr.io/cloud-builders/docker'
@@ -31,4 +32,3 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  
