@@ -9,7 +9,8 @@ steps:
     entrypoint: 'bash'
     args:
       - '-c'
-      - 'pip install -r requirements.txt && pytest app/tests'
+      - 'pip install -r requirements.txt && pip uninstall -y importlib-metadata && pytest app/tests'
+
 
 
 
