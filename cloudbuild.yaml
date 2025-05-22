@@ -5,9 +5,12 @@ steps:
     args: ['install', '-r', 'requirements.txt']
 
   - id: 'Run Tests'
-    name: 'python'
-    entrypoint: 'pytest'
-    args: ['app/tests']
+    name: 'gcr.io/cloud-builders/python'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - 'pip install -r requirements.txt && pytest app/tests'
+
 
 
   - id: 'Dockerize'
