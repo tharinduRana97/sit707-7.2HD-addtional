@@ -5,11 +5,11 @@ steps:
     args: ['install', '-r', 'requirements.txt']
 
   - id: 'Run Tests'
-    name: 'python:3.10'
+    name: 'python:3.9-slim'
     entrypoint: 'bash'
     args:
       - '-c'
-      - 'pip install -r requirements.txt && pip uninstall -y importlib-metadata && pytest app/tests'
+      - 'pip install -r requirements.txt && pytest app/tests'
 
 
 
